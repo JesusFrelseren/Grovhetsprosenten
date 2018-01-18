@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Brødskalaen</string>
+    <string name="title_activity_main">Brødskalaen</string>
+    <string name="title_home">Siktet mel</string>
+    <string name="title_dashboard">Sammalt mel</string>
+    <string name="title_notifications">Helkorn</string>
+</resources>
