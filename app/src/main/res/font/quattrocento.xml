@@ -11,10 +11,10 @@
         />
     <font app:fontStyle="normal"
         app:fontWeight="400"
-        app:font="@font/Quattrocento_Bold"
+        app:font="@font/quattrocento_bold"
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/Quattrocento_Bold"
+        android:font="@font/quattrocento_bold"
         />
 
 </font-family>
