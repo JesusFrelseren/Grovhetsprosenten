@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Brødskalaen</string>
     <string name="title_activity_main">Brødskalaen</string>
-    <string name="title_home">Siktet mel</string>
-    <string name="title_dashboard">Sammalt mel</string>
+    <string name="title_home">Siktet</string>
+    <string name="title_dashboard">Sammalt</string>
     <string name="title_notifications">Helkorn</string>
+    <string name="button_text">Kalkuler</string>
+    <string name="label_hvetemel">Hvetemel</string>
+    <string name="label_spelt">Speltmel</string>
+    <string name="label_rug">Rugmel</string>
+
 </resources>

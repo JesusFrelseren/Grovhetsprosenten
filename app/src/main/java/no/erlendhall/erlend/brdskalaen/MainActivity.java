@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private BottomNavigationView navigator;
 
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -27,15 +29,11 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_siktet:
-                    mTextMessage.setText(R.string.title_home);
-                    fragment = new SiktetFragment();
-		    replaceFragment();
+                    loadSiktetFragment();
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
                     return true;
 	    }
             return false;
@@ -47,28 +45,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-	fragmentManager = getSupportFragmentManager();
+        if (savedInstanceState == null) {
+            loadSiktetFragment();
+        }
 
-
-        navigator = (BottomNavigationView) findViewById(R.id.navigation);
-	navigator.inflateMenu(R.menu.bottom_menu);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        btnTest = (Button)findViewById(R.id.button);
-        btnTest.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                btnTest.setText("Test");
-            }
-        });
     }
 
-    private boolean replaceFragment() {
-    	final FragmentTransaction transaction = fragmentManager.beginTransaction();
-	transaction.replace(R.id.main_container, fragment).commit();
-	return true;
-    
+    private void loadSiktetFragment() {
+        SiktetFragment siktetFragment = SiktetFragment.newInstance();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, siktetFragment);
+        transaction.commit();
     }
 
 }
