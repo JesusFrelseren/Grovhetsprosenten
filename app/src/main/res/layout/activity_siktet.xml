@@ -6,151 +6,117 @@
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="81dp">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout4"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout6"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:mipmap/sym_def_app_icon" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
-    </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/relativeLayout6"
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="122dp">
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:id="@+id/label_hvetemel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quattrocento"
-                android:text="@string/label_hvetemel" />
-
-            <EditText
-                android:id="@+id/text_hvetemel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:ems="10"
-                android:inputType="number"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                tools:layout_editor_absoluteY="63dp" />
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout2"
+        <TextView
+            android:id="@+id/label_hvetemel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintHorizontal_bias="0.502"
+            android:fontFamily="@font/quattrocento"
+            android:layout_centerHorizontal="true"
+            android:labelFor="@id/text_hvetemel"
+            android:text="@string/label_hvetemel" />
+
+        <EditText
+            android:id="@+id/text_hvetemel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="number"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            tools:layout_editor_absoluteY="243dp">
-
-
-            <TextView
-                android:id="@+id/label_rug"
-                android:layout_width="55dp"
-                android:layout_height="21dp"
-                android:fontFamily="@font/quattrocento"
-                android:text="@string/label_rug"
-                tools:layout_editor_absoluteX="165dp"
-                tools:layout_editor_absoluteY="275dp" />
-
-            <EditText
-                android:id="@+id/text_rugmel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:ems="10"
-                android:inputType="number"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="203dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="44dp"
-            tools:layout_editor_absoluteX="85dp"
-            tools:layout_editor_absoluteY="395dp">
-
-
-            <TextView
-                android:id="@+id/label_speltmel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quattrocento"
-                android:text="@string/label_spelt"
-                tools:layout_editor_absoluteX="164dp"
-                tools:layout_editor_absoluteY="184dp" />
-
-
-            <EditText
-                android:id="@+id/text_speltmel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="number"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="398dp" />
-        </RelativeLayout>
+            tools:layout_editor_absoluteY="63dp" />
 
 
     </RelativeLayout>
 
 
     <RelativeLayout
-        android:id="@+id/relativeLayout5"
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout6">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="158dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:background="@android:color/holo_orange_dark"
+
+        <TextView
+            android:id="@+id/label_rug"
+            android:layout_width="55dp"
+            android:layout_height="21dp"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/quattrocento"
-            android:text="@string/button_text"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
+            android:labelFor="@id/text_rugmel"
+            android:text="@string/label_rug"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="275dp" />
+
+        <EditText
+            android:id="@+id/text_rugmel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="203dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+
+        <TextView
+            android:id="@+id/label_speltmel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quattrocento"
+            android:labelFor="@id/text_speltmel"
+            android:text="@string/label_spelt"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:id="@+id/text_speltmel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="number" />
+
+
     </RelativeLayout>
 
 
