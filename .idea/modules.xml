@@ -4,9 +4,7 @@
     <modules>
       <module fileurl="file://C:\Users\Erlen\Grovhetsprosenten\Brodskalaen.iml" filepath="C:\Users\Erlen\Grovhetsprosenten\Brodskalaen.iml" />
       <module fileurl="file://$PROJECT_DIR$/Grovhetsprosenten.iml" filepath="$PROJECT_DIR$/Grovhetsprosenten.iml" />
-      <module fileurl="file://C:\Users\Erlen\Grovhetsprosenten\Grovhetsprosenten.iml" filepath="C:\Users\Erlen\Grovhetsprosenten\Grovhetsprosenten.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Erlen\Grovhetsprosenten\app\app.iml" filepath="C:\Users\Erlen\Grovhetsprosenten\app\app.iml" />
     </modules>
   </component>
 </project>
