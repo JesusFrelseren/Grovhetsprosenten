@@ -46,11 +46,11 @@
             android:layout_centerHorizontal="true"
             android:ems="10"
             android:inputType="number"
+            android:text="@string/dec_hvetemel"
+            android:textAlignment="center"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             tools:layout_editor_absoluteY="63dp" />
-
-
     </RelativeLayout>
 
 
@@ -66,13 +66,13 @@
 
 
         <TextView
-            android:id="@+id/label_rug"
+            android:id="@+id/label_rugmel"
             android:layout_width="55dp"
             android:layout_height="21dp"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/quattrocento"
             android:labelFor="@id/text_rugmel"
-            android:text="@string/label_rug"
+            android:text="@string/label_rugmel"
             tools:layout_editor_absoluteX="165dp"
             tools:layout_editor_absoluteY="275dp" />
 
