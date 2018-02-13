@@ -20,7 +20,7 @@ class HelkornFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, @Nullable container: ViewGroup,
-                             savedInstanceState: Bundle?): View {
+                              savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_helkorn, container, false)
     }
 
