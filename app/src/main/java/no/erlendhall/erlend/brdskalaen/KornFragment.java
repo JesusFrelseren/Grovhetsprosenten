@@ -4,42 +4,41 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 
 
-public class SammaltFragment extends Fragment {
+public class KornFragment extends Fragment {
     OnFragmentChange callback;
-    private ArrayList<EditText> sammaltEdits;
-    private ArrayList<Integer> measurements;
-    public static SammaltFragment newInstance() {
-        return new SammaltFragment();
+    ArrayList<EditText> measurements;
+
+    public static KornFragment newInstance() {
+        return new KornFragment();
     }
+
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             Bundle savedInstance) {
-        View view = inflater.inflate(R.layout.fragment_sammalt, container, false);
-        sammaltEdits = new ArrayList<>();
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_helkorn, container, false);
 
-        sammaltEdits.add((EditText)view.findViewById(R.id.txt_sammalt_hvete));
-        sammaltEdits.add((EditText)view.findViewById(R.id.txt_sammalt_rug));
-        sammaltEdits.add((EditText)view.findViewById(R.id.txt_sammalt_spelt));
-        sammaltEdits.add((EditText)view.findViewById(R.id.txt_byggmel));
-        sammaltEdits.add((EditText)view.findViewById(R.id.txt_havremel));
+        measurements = new ArrayList<>();
+        measurements.add((EditText)view.findViewById(R.id.txt_havregryn));
+        measurements.add((EditText)view.findViewById(R.id.txt_hele_korn));
+        measurements.add((EditText)view.findViewById(R.id.txt_hvetekli));
+        measurements.add((EditText)view.findViewById(R.id.txt_rugkli));
+        measurements.add((EditText)view.findViewById(R.id.txt_havrekli));
 
-        for (EditText edit : sammaltEdits) {
+        for (EditText edit : measurements) {
+
             edit.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -53,21 +52,17 @@ public class SammaltFragment extends Fragment {
 
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    callback.onSammaltGrainChange(sammaltEdits);
+                    callback.onHelkornGrainChange(measurements);
                 }
             });
         }
 
         return view;
-        }
-        
-
-
+    }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
         Activity a;
 
         if(context instanceof Activity) {
@@ -77,9 +72,7 @@ public class SammaltFragment extends Fragment {
     }
 
     public interface OnFragmentChange {
-        void onSammaltGrainChange(ArrayList<EditText> sammalt);
+        void onHelkornGrainChange(ArrayList<EditText> siktet);
     }
-
-
 
 }

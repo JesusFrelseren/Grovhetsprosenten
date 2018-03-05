@@ -6,53 +6,34 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.widget.EditText;
-
+import android.widget.Toast;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity
+    implements SammaltFragment.OnFragmentChange,
+        SiktetFragment.OnFragmentChange,
+        KornFragment.OnFragmentChange {
 
     private BottomNavigationView navigator;
     private FragmentTransaction transaction;
-    private ArrayList<EditText> edits;
+    private Integer sammalt, siktet, helkorn;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_siktet);
+        setContentView(R.layout.activity_main);
         navigator = findViewById(R.id.navigation);
-        edits = new ArrayList<>();
 
         final SiktetFragment siktetFragment = SiktetFragment.newInstance();
         final SammaltFragment sammaltFragment = SammaltFragment.newInstance();
-        final HelkornFragment helkornFragment = HelkornFragment.newInstance();
+        final KornFragment helkornFragment = KornFragment.newInstance();
+
         loadSiktetFragment(siktetFragment);
-        edits.add((EditText) findViewById(R.id.text_hvetemel));
-        edits.add((EditText) findViewById(R.id.text_rugmel));
-
-        for (EditText edit : edits) {
-            edit.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                }
-
-                @Override
-                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                }
-
-                @Override
-                public void afterTextChanged(Editable editable) {
-                    updateTotal();
-                }
-            });
-        }
 
 
         navigator.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -76,17 +57,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
-    private boolean updateTotal() {
-        for (EditText edit : edits) {
-            String test = String.valueOf(edit.getText());
-        }
-
-        return true;
-    }
 
     private void loadSiktetFragment(SiktetFragment siktetFragment) {
         transaction = getFragmentManager().beginTransaction();
@@ -100,10 +72,51 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    private void loadHelkornFragment(HelkornFragment helkornFragment) {
+    private void loadHelkornFragment(KornFragment helkornFragment) {
         transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, helkornFragment);
         transaction.commit();
     }
+
+    @Override
+    public void onSammaltGrainChange(ArrayList<EditText> sammalt) {
+        this.sammalt = 0;
+
+        for (EditText val : sammalt) {
+            String aux = String.valueOf(val.getText());
+            if (!aux.equals("")) {
+                this.sammalt += Integer.valueOf(aux);
+            }
+
+        }
+
+        Toast.makeText(getBaseContext(), String.valueOf(this.sammalt), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onSiktetGrainChange(ArrayList<EditText> siktet) {
+        this.siktet = 0;
+
+        for (EditText val : siktet) {
+            String aux = String.valueOf(val.getText());
+            if (!aux.equals("")) {
+                this.siktet += Integer.valueOf(aux);
+            }
+
+        }
+    }
+
+    @Override
+    public void onHelkornGrainChange(ArrayList<EditText> helkorn) {
+        this.helkorn = 0;
+
+        for (EditText val : helkorn) {
+            String aux = String.valueOf(val.getText());
+            if(!aux.equals("")) {
+                this.helkorn += Integer.valueOf(aux);
+            }
+        }
+    }
+
 
 }
